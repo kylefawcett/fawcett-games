@@ -1,5 +1,5 @@
 import * as Phaser from 'phaser';
-
+import MainMenuScene from './scenes/MenuScene';
 export default class Demo extends Phaser.Scene
 {
     dude: Phaser.GameObjects.Sprite;
@@ -63,12 +63,17 @@ export default class Demo extends Phaser.Scene
     }
 }
 
-const config = {
-    type: Phaser.AUTO,
-    backgroundColor: '#125555',
+const SHARED_CONFIG: Phaser.Types.Core.GameConfig = {
     width: 800,
     height: 600,
-    scene: Demo
+};
+
+const config:Phaser.Types.Core.GameConfig = {
+    type: Phaser.AUTO,
+    ...SHARED_CONFIG,
+    parent: 'fawcett-games',
+    scene: [new MainMenuScene(SHARED_CONFIG)],
 };
 
 const game = new Phaser.Game(config);
+;

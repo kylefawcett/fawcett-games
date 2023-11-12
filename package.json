@@ -1,5 +1,5 @@
 {
-    "name": "Fawcett Games",
+    "name": "fawcett-games",
     "version": "0.0.1",
     "description": "Fun games by the Fawcett family",
     "main": "src/game.ts",
